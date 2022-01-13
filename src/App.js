@@ -4,13 +4,13 @@ import Nav from './components/Nav/Nav.js'
 import Home from './components/Home/Home.js'
 import AddTodo from './components/AddTodo/AddTodo.js'
 import EditTodo from './components/EditTodo/EditTodo.js'
-import { Switch, Route,BrowserRouter } from 'react-router-dom';
-import { store } from './store';
+import { Switch, Route,HashRouter } from 'react-router-dom';
+
 // En este componente deberias cargar tus rutas.
 export function App() {
   return (
     <div className="App">
-     <BrowserRouter>
+     <HashRouter basename={process.env.PUBLIC_URL}>
     <Nav/>
      <Switch>
      <Route
@@ -30,7 +30,7 @@ export function App() {
       />
 
     </Switch>
-    </BrowserRouter>
+    </HashRouter>
     </div>
   );
 }
